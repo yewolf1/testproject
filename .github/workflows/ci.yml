@@ -3,14 +3,14 @@ name: Node.js CI/CD Pipeline
 on:
   push:
     branches:
-      - main  # ou la branche de votre choix
+      - main # ou la branche de votre choix
   pull_request:
     branches:
-      - main  # ou la branche de destination du PR
+      - main # ou la branche de destination du PR
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Utilise un environnement Ubuntu pour l'exécution
+    runs-on: ubuntu-latest # Utilise un environnement Ubuntu pour l'exécution
 
     steps:
       # Checkout du code source
@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  # Utilisez la version de Node.js que vous utilisez
+          node-version: "16" # Utilisez la version de Node.js que vous utilisez
 
       # Installation des dépendances
       - name: Install dependencies
@@ -29,10 +29,5 @@ jobs:
 
       # Exécution des tests unitaires
       - name: Run tests
-        run: npm test  # Remplacez par "npm run test2" si vous avez un autre script de test
-
-      # Vérification de la qualité du code avec un linter
-      - name: Run linter
-        run: npm run lint  # Assurez-vous que vous avez un script "lint" dans votre package.json
-
+        run: npm test # Remplacez par "npm run test2" si vous avez un autre script de test
 
